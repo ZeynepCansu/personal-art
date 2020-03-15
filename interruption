@@ -1,0 +1,89 @@
+PImage inter1;
+PImage inter2;
+int rd;
+int gr;
+int bl;
+int al;
+int xPosition;
+int xDirection;
+int yPosition;
+int yDirection;
+int a;
+
+ 
+void setup() {
+ size(2700, 1800);
+ background(50);
+ frameRate(150);
+ inter1 = loadImage("uninterruption.BMP");
+ inter1.resize(600, 900);
+ inter2 = loadImage("uninterruption II.BMP");
+ inter2.resize(600, 900);
+ xDirection = -20;
+ yDirection = 20;
+ rd = 0;
+ gr = 0;
+ bl = 80;
+ al = 0;
+ a = 300;
+}
+
+void draw() {
+ tint(rd, gr, bl, al);
+ rd = rd + 15;
+ gr = gr + 1;
+ bl = bl - 2;
+ image(inter1, xPosition, yPosition);
+ image(inter2, -xPosition+2000, yPosition);
+ xPosition = xPosition + xDirection;
+ yPosition = yPosition + yDirection;
+ 
+ if(xPosition < 0) {
+  xDirection = 20;
+}
+
+if(yPosition < 0) {
+  yDirection = 20;
+}
+
+ if(xPosition > width - inter1.width) {
+   xDirection = 20;
+ }
+  if(xPosition > width - inter2.width) {
+   xDirection = -20;
+ }
+ 
+  if(yPosition > height - inter1.height) {
+   yDirection = -20;
+ }
+ 
+   if(yPosition > height - inter2.height) {
+   yDirection = -20;
+ }
+ 
+ while(al >= 5) {
+   al = al - 10;
+ } 
+ if(al < 5) {
+   al = al + 10;
+ }
+ 
+if(rd > 255) {
+  rd = 10;
+}
+
+if(gr > 255) {
+  gr = 0;
+}
+
+if(bl < 0) {
+  bl = 80;
+}
+
+stroke(200, 102, 0, 100);
+strokeWeight(6);
+noFill();
+circle(1300, 800, a);
+a = a + yDirection;
+
+}
