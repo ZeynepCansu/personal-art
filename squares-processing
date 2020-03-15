@@ -1,0 +1,38 @@
+int xPos;
+int yPos;
+int rectheight;
+int rectwidth;
+int red;
+int green;
+int blue;
+int alpha;
+int x;
+int y;
+int b;
+
+void setup() {
+  size(2000, 1300);
+  background(80);
+  frameRate(10);
+  
+}
+
+void draw() {
+  rectwidth = floor(random(20, 200));
+    rectheight = floor(random(40, 120));
+ 
+  for (y = 0; y < ceil(height/rectheight); y++) {
+    
+    for (x = 0; x < ceil(width/rectwidth); x++) {
+    
+      fill(red, green, blue);
+      red = floor(random(1, 255));
+      green = floor(random(1, 255));
+      blue = floor(random(1, 255));
+      strokeWeight(random(1, 5));
+      b = floor(random(1, 50));
+      rect(x*rectwidth, y*rectheight, rectwidth, rectheight, b);
+    }
+
+  }
+}
