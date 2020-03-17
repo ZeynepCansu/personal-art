@@ -14,7 +14,6 @@ canvas.parent('#anim');
 p = 0;
 rectMode(CORNER);
 
-
 }
 
 function draw() {
@@ -27,7 +26,7 @@ for (let i = 0; i < canvasWidth/ 21; i++) {
 	fill(120+i*5, 100-i, 30 + i*2);
 	rect(-20*i, -canvasHeight/2, 20, canvasHeight);
 	rect(20*i, -canvasHeight/2, 20, canvasHeight);
-}
+	}
 
 strokeWeight(2);
 
@@ -63,13 +62,10 @@ p = p + 20;
 
 if (p > 254) {
 	p = 0;
-}
-
-
+	}
 }
 
 function mouseDragged() {
 rotX = rotX + 0.1;
 rotY = rotY + 0.1;
-;
 }
