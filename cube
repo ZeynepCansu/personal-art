@@ -1,0 +1,75 @@
+let cube, cube1, cube2, cube3, cube4, cube5;
+let rotX = 0;
+let rotY = 0;
+let p, w, y;
+let canvasHeight, canvasWidth;
+
+function setup() {
+
+frameRate(10);
+canvasHeight = windowHeight;
+canvasWidth = windowWidth;
+let canvas = createCanvas(canvasWidth, canvasHeight, WEBGL);
+canvas.parent('#anim');
+p = 0;
+rectMode(CORNER);
+
+
+}
+
+function draw() {
+let backColor = color('rgba(255, 255, 255, 255)');
+background(backColor);
+
+for (let i = 0; i < canvasWidth/ 21; i++) {
+	stroke(255, 255, 0);
+	strokeWeight(1);
+	fill(120+i*5, 100-i, 30 + i*2);
+	rect(-20*i, -canvasHeight/2, 20, canvasHeight);
+	rect(20*i, -canvasHeight/2, 20, canvasHeight);
+}
+
+strokeWeight(2);
+
+rotateX(rotX);
+rotateY(rotY);
+lights();
+stroke(255, 0, 0);
+
+
+let g = color(255, 250, 200, 190);
+fill(g);
+cube = box(canvasHeight/4+20, canvasHeight/4+20, canvasHeight/4+20);
+let f = color(55, 50, 180, 190);
+fill(f);
+cube2 = box(canvasHeight/4-20, canvasHeight/4-20, canvasHeight/4-20);
+let e = color(55, 150, 80, 190);
+fill(e);
+cube3 = box(canvasHeight/4-60, canvasHeight/4-60, canvasHeight/4-60);
+let d = color(255, 150, 10, 190);
+fill(d);
+cube4 = box(canvasHeight/4-90, canvasHeight/4-90, canvasHeight/4-90);
+let c = color(200, 50, 10, 190);
+fill(c);
+cube5 = box(canvasHeight/4-120, canvasHeight/4-120, canvasHeight/4-120);
+
+let n = 255;
+let m = 255;
+
+
+fill(n, m, p);
+cube6 = box(canvasHeight/4-200, canvasHeight/4-200, canvasHeight/4-200);
+p = p + 20;
+
+if (p > 254) {
+	p = 0;
+}
+
+
+}
+
+function mouseDragged() {
+rotX = rotX + 0.1;
+rotY = rotY + 0.1;
+;
+}
