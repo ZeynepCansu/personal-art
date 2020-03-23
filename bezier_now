@@ -1,0 +1,94 @@
+int x1 = 150;
+int y1 = 600;
+int x2 = 900;
+int y2 = 500;
+int x3 = 900;
+int y3 = 170;
+int x4 = 800;
+int y4 = 1300;
+int stWe = 2;
+int r = 100;
+int g = 30;
+int b = 50;
+int a = 20;
+
+void setup() {
+size(1500, 1800);
+frameRate(30);
+background(x1, y3, 200, 40);
+}
+
+void draw() {
+ 
+strokeWeight(30);
+point(x1, y3);
+strokeWeight(1);
+noFill();
+ellipse(x1, y3, x3, y4);
+
+fill(r, g, b, a);
+r = r + 1;
+a = a + 1;
+if(a >120) {
+  a = 20;
+}
+strokeWeight(stWe);
+stWe = stWe + 1;
+if(stWe >= 7) {
+  stWe = 1;
+}
+bezier(x1, y1, x2, y2, x3, y3, x4, y4);
+x1 = x1 + 30;
+y1 = y1 + 20;
+x2 = x2 - 3;
+y2 = y2 - 7;
+x3 = x3 + 20;
+y3 = y3 + 50;
+x4 = x4 - 2;
+y4 = y4 - 1;
+
+if(x1 > width) {
+  x1 = 150;
+}
+
+if(x2 < width) {
+  x2 = 900;
+}
+
+if(x3 > width) {
+  x3 = 500;
+}
+
+if(x4 < width) {
+  x4 = 500;
+}
+
+if(y1 > height) {
+  y1 = 400;
+}
+if(y2 < height) {
+  y2 = 200;
+}
+
+if(y3 > height) {
+  y3 = 170;
+}
+
+if(y4 < height) {
+  y4 = 1300;
+}
+
+if(mousePressed) {
+  x1 = 100;
+  y1 = 100;
+  x2 = 400;
+  x3 = 1500;
+  y2 = 400;
+  x4 = 900;
+  y4 = 1500;
+  y3 = 600;
+  fill(0);
+  textSize(70);
+  text("NOW", 570, 900);
+}
+}
