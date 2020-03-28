@@ -7,7 +7,7 @@ var racket;
 var seconds = 0;
 var font;
 var canvas;
-var Kruschev, laikaWin, laikaIntro;
+var kruschev, laikaWin, laikaIntro;
 var gameStart = 0;
 
 function setup() {
@@ -17,7 +17,7 @@ function setup() {
   canvas.parent('#laika');
   backimage = loadImage('nebula.PNG');
   racket = loadImage('laika-head.png');
-  Kruschev = loadImage('krush.jpg');
+  kruschev = loadImage('krush.jpg');
   laikaWin = loadImage('laika-win.jpg');
   laikaIntro = loadImage('laika-intro.jpg');
   ballXPos = 10;
@@ -142,7 +142,7 @@ if(score == 15) {
   image(backimage, 0, 0);
   textSize(60);
   text("Ouch, try again.", width/3, height/5); 
-  image(Kruschev, width/3+100, height/2-120, width/5, height/3.5);
+  image(kruschev, width/3+100, height/2-120, width/5, height/3.5);
   textSize(30);
   text("Refresh page to play again", width/3+100, 4*height/5); 
   score = 0;
